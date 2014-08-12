@@ -78,7 +78,7 @@ class API(base_api.NetworkAPI):
         belong to the user's project.
         """
         try:
-            return objects.NetworkList.get_all(context, project_only=True)
+            return objects.NetworkList.get_all(context, project_only='allow_none')
         except exception.NoNetworksFound:
             return []
 
